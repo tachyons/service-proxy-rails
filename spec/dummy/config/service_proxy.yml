@@ -1,0 +1,11 @@
+default: &default
+  services:
+    catalogue-service:
+      path: /api/products
+      backend: https:/www.apple.com/
+
+development:
+  <<: *default
+
+test:
+  <<: *default
