@@ -1,8 +1,21 @@
 default: &default
   services:
-    catalogue-service:
-      path: /api/products
-      backend: https:/www.apple.com/
+    https-with-port-8080:
+      path: /api/https-with-port-8080
+      backend: https://www.apple.com:8080/
+
+    https-with-no-port:
+      path: /api/https-with-no-port
+      backend: https://www.apple.com/
+
+    http-with-port-8080:
+      path: /api/http-with-port-8080
+      backend: http://www.apple.com:8080/
+
+    http-with-no-port:
+      path: /api/http-with-no-port
+      backend: http://www.apple.com/
+
 
 development:
   <<: *default

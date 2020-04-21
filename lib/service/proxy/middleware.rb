@@ -3,9 +3,6 @@ require 'rack-proxy'
 module Service
   module Proxy
     class Middleware < Rack::Proxy
-      def initialize(app = nil, opts= {})
-        super
-      end
 
       def perform_request(env)
         request = Rack::Request.new(env)
@@ -13,14 +10,16 @@ module Service
         # use rack proxy for anything hitting our host app at /example_service
         if config && request.path =~ config.proxied_paths_matcher
           service = config.service_matching_path(request.path)
-          puts service.backend.inspect
-          puts service.backend.scheme
-          puts service.backend.host
+          #puts service.backend.inspect
+          #puts service.backend.scheme
+          #puts service.backend.host
 
           # most backends required host set properly, but rack-proxy doesn't set this for you automatically
           # even when a backend host is passed in via the options
-          env['SERVER_NAME'] = env['HTTP_HOST'] = service.backend.host
-
+          #env['HTTPS'] = service.backend
+          env['SERVER_NAME'] = env['HTTP_HOST'] = [service.backend.host, service.backend.port].compact.join(':')
+          env['SERVER_PORT'] = service.backend.port.to_s
+          env['rack.url_scheme'] = service.backend.scheme
           # This is the only path that needs to be set currently on Rails 5 & greater
           env['PATH_INFO'] = service.backend_path_for(request.path)
 
