@@ -7,8 +7,6 @@ module Service
       end
 
       def backend
-        puts "backend"
-        puts @options.fetch(:backend, '').inspect
         @backend ||= URI(@options.fetch(:backend, ''))
       end
 
@@ -26,7 +24,15 @@ module Service
       end
 
       def send_cookies?
-        true
+        @options.fetch(:forward_cookies, true)
+      end
+
+      def verify_ssl?
+        @options.fetch(:verify_ssl, true)
+      end
+
+      def read_timeout
+        @options.fetch(:read_timeout, nil)
       end
     end
   end

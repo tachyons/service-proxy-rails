@@ -2,20 +2,32 @@ default: &default
   services:
     https-with-port-8080:
       path: /api/https-with-port-8080
-      backend: https://www.apple.com:8080/
+      backend: https://www.example.com:8080/
 
     https-with-no-port:
       path: /api/https-with-no-port
-      backend: https://www.apple.com/
+      backend: https://www.example.com/
 
     http-with-port-8080:
       path: /api/http-with-port-8080
-      backend: http://www.apple.com:8080/
+      backend: http://www.example.com:8080/
 
     http-with-no-port:
       path: /api/http-with-no-port
-      backend: http://www.apple.com/
+      backend: http://www.example.com/
 
+    https-with-no-cookie-forwarding:
+      path: /api/https-with-no-cookie-forwarding
+      backend: https://www.example.com/
+      forward_cookies: false
+
+    https-with-get-params:
+      path: /api/https-with-get-params/
+      backend: https://www.example.com/
+
+    https-with-post-body:
+      path: /api/https-post-request
+      backend: https://www.example.com/
 
 development:
   <<: *default
