@@ -51,7 +51,7 @@ module Service
 
         if File.exist?(Rails.root.join('config/service_proxy.yml'))
           config_data = Rails.application.config_for(:service_proxy)
-          @config = Config.new(config_data) if config_data
+          @config = Config.new(config_data.deep_symbolize_keys) if config_data
         end
         @config ||= nil
       end
