@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     steps:
@@ -21,7 +22,8 @@ jobs:
       run: bundle install
     - name: Run tests
       run: bundle exec rspec spec
-  publish:
+  version:
+    name: Create version
     runs-on: ubuntu-latest
     needs: [test]
     steps:
@@ -45,6 +47,12 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn run auto shipit
+  publish:
+    name: Publish gem
+    runs-on: ubuntu-latest
+    needs: [test, version]
+    if: github.ref == 'refs/heads/master'
+    steps:
       - name: Build and publish gem
         uses: jstastny/publish-gem-to-github@master
         with:
