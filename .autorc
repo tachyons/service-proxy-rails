@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "git-tag",
+    "all-contributors",
+    "conventional-commits",
+    ["jira", "https://sephora-asia.atlassian.net/"],
+    "released",
+    "slack"
+  ],
+  "owner": "sephora-asia",
+  "repo": "service-proxy-rails"
+}

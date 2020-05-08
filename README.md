@@ -23,7 +23,10 @@ $ bundle
 Create a file named ``config/service_proxy.yml`` in your rails application directory.
 
 ## Contributing
-Contribution directions go here.
+
+Run `make setup` in order to install your dev environment.
+
+This project uses the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit naming.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

@@ -1,0 +1,16 @@
+fail_fast: true
+default_stages: [commit, push]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: detect-aws-credentials
+      - id: detect-private-key
+        exclude: node_modules/*
+
+  - repo: https://github.com/sephora-asia/pre-commit-hooks
+    rev: d721b81886a6c95d555de972ab5d79bba34ba618
+    hooks:
+      - id: commitlint
+        stages: [commit-msg]
