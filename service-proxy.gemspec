@@ -1,12 +1,9 @@
 $:.push File.expand_path('lib', __dir__)
 
-# Maintain your gem's version:
-require 'service/proxy/version'
-
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.name        = 'service-proxy'
-  spec.version     = Service::Proxy::VERSION
+  spec.version     = File.read('VERSION')
   spec.authors     = ['Donald Piret']
   spec.email       = ['dpiret@sephora.sg']
   spec.homepage    = 'https://github.com/sephora-asia/service-proxy'
