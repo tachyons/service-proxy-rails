@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Prepare repository
-        run: git fetch --unshallow --tags
+        run: git fetch --unshallow --tags --force
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
