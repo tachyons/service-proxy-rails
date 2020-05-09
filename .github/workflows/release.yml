@@ -41,6 +41,10 @@ jobs:
           key: yarn-deps-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             yarn-deps-${{ hashFiles('yarn.lock') }}
+      - name: Setup git config
+        run: |
+          git config user.name "Sephora Bot"
+          git config user.email "devops+gh-sephora-bot@sephoradigital.com"
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_SEPHORA_BOT }} # Needs a token that has push access to protected branches
