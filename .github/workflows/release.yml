@@ -53,6 +53,7 @@ jobs:
     needs: [test, version]
     if: github.ref == 'refs/heads/master'
     steps:
+      - uses: actions/checkout@v2
       - name: Build and publish gem
         uses: jstastny/publish-gem-to-github@master
         with:
