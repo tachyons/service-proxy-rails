@@ -1,3 +1,15 @@
+# v0.2.1 (Sat May 09 2020)
+
+#### 🐛 Bug Fix
+
+- fix: try to fix bumping of VERSION ([@donaldpiret](https://github.com/donaldpiret))
+
+#### Authors: 1
+
+- Donald Piret ([@donaldpiret](https://github.com/donaldpiret))
+
+---
+
 # v0.2.0 (Sat May 09 2020)
 
 #### 🚀 Enhancement
