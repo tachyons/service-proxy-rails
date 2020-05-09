@@ -28,6 +28,8 @@ jobs:
     needs: [test]
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN_SEPHORA_BOT }} # Needs a token that has push access to protected branches
       - name: Prepare repository
         run: git fetch --unshallow --tags --force
       - name: Use Node.js 12.x
@@ -46,8 +48,6 @@ jobs:
           git config user.name "Sephora Bot"
           git config user.email "devops+gh-sephora-bot@sephoradigital.com"
       - name: Create Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_SEPHORA_BOT }} # Needs a token that has push access to protected branches
         run: |
           yarn install --frozen-lockfile
           git reset --hard
