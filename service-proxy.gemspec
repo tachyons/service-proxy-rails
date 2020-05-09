@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com'
     spec.metadata['homepage_uri'] = spec.homepage
     spec.metadata['source_code_uri'] = 'https://github.com/sephora-asia/service-proxy-rails'
+    spec.metadata['github_repo'] = 'ssh://github.com/sephora-asia/service-proxy-rails'
   else
     raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
