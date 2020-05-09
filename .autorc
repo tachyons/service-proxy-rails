@@ -3,7 +3,8 @@
     "git-tag",
     "conventional-commits",
     ["jira", "https://sephora-asia.atlassian.net/"],
-    "released"
+    "released",
+    "./.auto/plugins/version-file.js"
   ],
   "owner": "sephora-asia",
   "repo": "service-proxy-rails"
