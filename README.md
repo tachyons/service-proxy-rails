@@ -10,7 +10,11 @@ This gem allows you to easily set up these backend service proxy's through a sim
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'service-proxy'
+
+source "https://rubygems.pkg.github.com/sephora-asia" do
+  gem 'service-proxy'
+end
+
 ```
 
 And then execute:
