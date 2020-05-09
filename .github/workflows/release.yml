@@ -31,7 +31,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN_SEPHORA_BOT }} # Needs a token that has push access to protected branches
       - name: Prepare repository
-        run: git fetch --unshallow --tags --force
+        run: git fetch --prune --unshallow
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
