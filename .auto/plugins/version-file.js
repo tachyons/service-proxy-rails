@@ -1,7 +1,4 @@
 const fs = require('fs');
-import {
-    execPromise
-} from '@auto-it/core';
 
 module.exports = class VersionFilePlugin {
     constructor(config) {
@@ -14,6 +11,10 @@ module.exports = class VersionFilePlugin {
      * @param {import('@auto-it/core').default} auto
      */
     apply(auto) {
+        import {
+            execPromise
+        } from '@auto-it/core';
+
         // hook into auto
         auto.hooks.beforeCommitChangelog.tap(
             'VersionFile',
