@@ -18,7 +18,7 @@ module.exports = class VersionFilePlugin {
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
                 // do something
                 fs.writeFileSync('./VERSION', currentVersion);
-                await execPromise("git", ["add", "README.md"]);
+                await execPromise("git", ["add", "VERSION"]);
             }
         );
     }
