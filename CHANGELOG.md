@@ -1,3 +1,30 @@
+# v0.1.2 (Sat May 09 2020)
+
+#### 🐛 Bug Fix
+
+- fix: aaargh ([@donaldpiret](https://github.com/donaldpiret))
+- fix: try not pruning ([@donaldpiret](https://github.com/donaldpiret))
+- fix: sigh ([@donaldpiret](https://github.com/donaldpiret))
+- fix: remove node_modules from committed files ([@donaldpiret](https://github.com/donaldpiret))
+- fix: try same node version ([@donaldpiret](https://github.com/donaldpiret))
+- fix: trying something else ([@donaldpiret](https://github.com/donaldpiret))
+- fix: this should fetch tags already ([@donaldpiret](https://github.com/donaldpiret))
+- fix: make sure to include tags ([@donaldpiret](https://github.com/donaldpiret))
+- fix: remove slack notifications ([@donaldpiret](https://github.com/donaldpiret))
+- fix: try a different checkout command ([@donaldpiret](https://github.com/donaldpiret))
+- fix: need both ([@donaldpiret](https://github.com/donaldpiret))
+- fix: set the token in the checkout step ([@donaldpiret](https://github.com/donaldpiret))
+
+#### ⚠️  Pushed to `master`
+
+- Merge branch 'master' of https://github.com/sephora-asia/service-proxy-rails ([@donaldpiret](https://github.com/donaldpiret))
+
+#### Authors: 1
+
+- Donald Piret ([@donaldpiret](https://github.com/donaldpiret))
+
+---
+
 # v0.1.1 (Sat May 09 2020)
 
 #### 🐛 Bug Fix
