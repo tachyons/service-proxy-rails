@@ -50,6 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_SEPHORA_BOT }} # Needs a token that has push access to protected branches
         run: |
           yarn install --frozen-lockfile
+          git reset --hard
           yarn run auto shipit
   publish:
     name: Publish gem
