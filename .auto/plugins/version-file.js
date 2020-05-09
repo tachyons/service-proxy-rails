@@ -1,4 +1,7 @@
 const fs = require('fs');
+import {
+    execPromise
+} from '@auto-it/core';
 
 module.exports = class VersionFilePlugin {
     constructor(config) {
@@ -17,6 +20,7 @@ module.exports = class VersionFilePlugin {
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
                 // do something
                 fs.writeFileSync('./VERSION', currentVersion);
+                await execPromise("git", ["add", "README.md"]);
             }
         );
     }
