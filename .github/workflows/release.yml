@@ -60,6 +60,8 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: 'master'
       - name: Build and publish gem
         uses: jstastny/publish-gem-to-github@master
         with:

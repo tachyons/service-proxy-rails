@@ -4,9 +4,9 @@ $:.push File.expand_path('lib', __dir__)
 Gem::Specification.new do |spec|
   spec.name        = 'service-proxy'
   spec.version     = File.read('VERSION')
-  spec.authors     = ['Donald Piret']
+  spec.authors     = ['Sephora Asia']
   spec.email       = ['dpiret@sephora.sg']
-  spec.homepage    = 'https://github.com/sephora-asia/service-proxy'
+  spec.homepage    = 'https://github.com/sephora-asia/service-proxy-rails'
   spec.summary     = 'Easily proxy paths in your rails application to other backend services.'
   spec.description = 'Easily proxy paths in your rails application to other backend services.'
   spec.license     = 'MIT'
@@ -14,7 +14,9 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "https://rubygems.pkg.github.com"
+    spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com'
+    spec.metadata['homepage_uri'] = spec.homepage
+    spec.metadata['source_code_uri'] = 'https://github.com/sephora-asia/service-proxy-rails'
   else
     raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
