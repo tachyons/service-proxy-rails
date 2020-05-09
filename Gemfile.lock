@@ -3,7 +3,7 @@ PATH
   specs:
     service-proxy (0.1.1)
       rack-proxy (~> 0.6.5)
-      rails (~> 6.0.2, >= 6.0.2.2)
+      rails (>= 5.2.3)
 
 GEM
   remote: https://rubygems.org/

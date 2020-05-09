@@ -28,5 +28,7 @@ Run `make setup` in order to install your dev environment.
 
 This project uses the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit naming.
 
+Publishing is done automatically when a push to the master branch is detected.
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
