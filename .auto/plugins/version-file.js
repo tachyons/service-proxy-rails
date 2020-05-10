@@ -16,9 +16,9 @@ module.exports = class VersionFilePlugin {
         auto.hooks.beforeCommitChangelog.tap(
             'VersionFile',
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
-                auto.logger.verbose.info(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}`)
+                auto.logger.verbose.error(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}`)
                 const versionWithoutPrefix = currentVersion.replace(/^v/, '')
-                auto.logger.verbose.info("Updating VERSION file to: ", versionWithoutPrefix);
+                auto.logger.verbose.error("Updating VERSION file to: ", versionWithoutPrefix);
                 fs.writeFileSync('./VERSION', versionWithoutPrefix);
                 await execPromise("git", ["add", "VERSION"]);
             }
