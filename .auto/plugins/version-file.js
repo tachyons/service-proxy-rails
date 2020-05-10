@@ -16,13 +16,8 @@ module.exports = class VersionFilePlugin {
         // hook into auto
         auto.hooks.beforeCommitChangelog.tap(
             'VersionFile',
-            async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
-                const bump = await auto.release.getSemverBump(currentVersion);
-                console.error("Bump");
-                console.error(JSON.stringify(bump));
+            async ({ currentVersion, bump }) => {
                 const version = inc(currentVersion, bump);
-                console.error(version);
-
                 const versionWithoutPrefix = version.replace(/^v/, '');
                 fs.writeFileSync('./VERSION', versionWithoutPrefix);
                 await execPromise("git", ["add", "VERSION"]);
