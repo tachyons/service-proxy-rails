@@ -17,22 +17,20 @@ module.exports = class VersionFilePlugin {
         auto.hooks.beforeCommitChangelog.tap(
             'VersionFile',
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
-                console.error('FUUUUCK')
-                auto.logger.verbose.success("Triggered plugin");
-                // let version;
-                // if (lastRelease.match(/\d+\.\d+\.\d+/)) {
-                //     version = await auto.release.calcNextVersion(lastRelease);
-                // } else {
-                //     // lastRelease is a git sha. no releases have been made
-                //     const bump = await auto.release.getSemverBump(lastRelease);
-                //     version = inc(currentVersion, bump);
-                // }
-                //
-                // auto.logger.verbose.success(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
-                // const versionWithoutPrefix = version.replace(/^v/, '');
-                // auto.logger.verbose.success("Updating VERSION file to: ", versionWithoutPrefix);
-                // fs.writeFileSync('./VERSION', versionWithoutPrefix);
-                // await execPromise("git", ["add", "VERSION"]);
+                let version;
+                if (lastRelease.match(/\d+\.\d+\.\d+/)) {
+                    version = await auto.release.calcNextVersion(lastRelease);
+                } else {
+                    // lastRelease is a git sha. no releases have been made
+                    const bump = await auto.release.getSemverBump(lastRelease);
+                    version = inc(currentVersion, bump);
+                }
+
+                console.error(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
+                const versionWithoutPrefix = version.replace(/^v/, '');
+                auto.logger.verbose.success("Updating VERSION file to: ", versionWithoutPrefix);
+                fs.writeFileSync('./VERSION', versionWithoutPrefix);
+                await execPromise("git", ["add", "VERSION"]);
             }
         );
     }
