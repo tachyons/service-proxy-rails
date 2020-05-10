@@ -33,7 +33,7 @@ module.exports = class VersionFilePlugin {
 
                 console.error(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
                 const versionWithoutPrefix = version.replace(/^v/, '');
-                auto.logger.verbose.success("Updating VERSION file to: ", versionWithoutPrefix);
+                console.error("Updating VERSION file to: ", versionWithoutPrefix);
                 fs.writeFileSync('./VERSION', versionWithoutPrefix);
                 await execPromise("git", ["add", "VERSION"]);
             }
