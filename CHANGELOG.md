@@ -1,3 +1,16 @@
+# v0.2.2 (Sun May 10 2020)
+
+#### 🐛 Bug Fix
+
+- fix: more logging ([@donaldpiret](https://github.com/donaldpiret))
+- fix: try a different hook as the version is late ([@donaldpiret](https://github.com/donaldpiret))
+
+#### Authors: 1
+
+- Donald Piret ([@donaldpiret](https://github.com/donaldpiret))
+
+---
+
 # v0.2.1 (Sat May 09 2020)
 
 #### 🐛 Bug Fix
