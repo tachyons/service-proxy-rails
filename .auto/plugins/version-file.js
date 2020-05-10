@@ -25,16 +25,9 @@ module.exports = class VersionFilePlugin {
                 const bump = await auto.release.getSemverBump(lastRelease);
                 console.error("Bump");
                 console.error(JSON.stringify(bump));
-                let version;
-                if (lastRelease.match(/\d+\.\d+\.\d+/)) {
-                    version = await auto.release.calcNextVersion(lastRelease);
-                } else {
-                    // lastRelease is a git sha. no releases have been made
+                const version = inc(currentVersion, bump);
+                console.error(version);
 
-                    version = inc(currentVersion, bump);
-                }
-
-                console.error(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
                 const versionWithoutPrefix = version.replace(/^v/, '');
                 console.error("Updating VERSION file to: ", versionWithoutPrefix);
                 fs.writeFileSync('./VERSION', versionWithoutPrefix);
