@@ -2,6 +2,24 @@
 
 #### 🐛 Bug Fix
 
+- fix: trigger a bump ([@donaldpiret](https://github.com/donaldpiret))
+- fix: not sure what has changed or why logging is not working ([@donaldpiret](https://github.com/donaldpiret))
+- fix: fix references ([@donaldpiret](https://github.com/donaldpiret))
+
+#### ⚠️  Pushed to `master`
+
+- Merge branch 'master' of https://github.com/sephora-asia/service-proxy-rails ([@donaldpiret](https://github.com/donaldpiret))
+
+#### Authors: 1
+
+- Donald Piret ([@donaldpiret](https://github.com/donaldpiret))
+
+---
+
+# v0.2.4 (Sun May 10 2020)
+
+#### 🐛 Bug Fix
+
 - fix: not sure what has changed or why logging is not working ([@donaldpiret](https://github.com/donaldpiret))
 - fix: fix references ([@donaldpiret](https://github.com/donaldpiret))
 
