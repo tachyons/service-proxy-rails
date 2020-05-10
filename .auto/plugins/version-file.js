@@ -13,13 +13,14 @@ module.exports = class VersionFilePlugin {
      */
     apply(auto) {
         // hook into auto
-        auto.hooks.beforeCommitChangelog.tap(
+        auto.hooks.afterAddToChangelog.tap(
             'VersionFile',
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
                 const versionWithoutPrefix = currentVersion.replace(/^v/, '')
                 console.log("Updating VERSION file to: ", versionWithoutPrefix);
                 fs.writeFileSync('./VERSION', versionWithoutPrefix);
                 await execPromise("git", ["add", "VERSION"]);
+                await execPromise("git", ["commit", "--amend", "--no-edit"]);
             }
         );
     }
