@@ -19,10 +19,10 @@ module.exports = class VersionFilePlugin {
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
                 let version
                 if (lastRelease.match(/\d+\.\d+\.\d+/)) {
-                    version = await auto.calcNextVersion(lastRelease);
+                    version = await auto.release.calcNextVersion(lastRelease);
                 } else {
                     // lastRelease is a git sha. no releases have been made
-                    const bump = await this.getSemverBump(lastRelease);
+                    const bump = await auto.release.getSemverBump(lastRelease);
                     version = inc(currentVersion, bump);
                 }
 
