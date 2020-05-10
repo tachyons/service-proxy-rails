@@ -1,3 +1,21 @@
+# v0.2.3 (Sun May 10 2020)
+
+#### 🐛 Bug Fix
+
+- fix: this is not TS ([@donaldpiret](https://github.com/donaldpiret))
+- fix: try an alternative approach ([@donaldpiret](https://github.com/donaldpiret))
+- fix: try to log as error instead ([@donaldpiret](https://github.com/donaldpiret))
+
+#### ⚠️  Pushed to `master`
+
+- Merge branch 'master' of https://github.com/sephora-asia/service-proxy-rails ([@donaldpiret](https://github.com/donaldpiret))
+
+#### Authors: 1
+
+- Donald Piret ([@donaldpiret](https://github.com/donaldpiret))
+
+---
+
 # v0.2.2 (Sun May 10 2020)
 
 #### 🐛 Bug Fix
