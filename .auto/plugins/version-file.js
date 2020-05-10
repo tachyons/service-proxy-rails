@@ -23,7 +23,7 @@ module.exports = class VersionFilePlugin {
                 } else {
                     // lastRelease is a git sha. no releases have been made
                     const bump = await this.getSemverBump(lastRelease);
-                    version = inc(currentVersion, bump as ReleaseType);
+                    version = inc(currentVersion, bump);
                 }
 
                 auto.logger.verbose.error(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
