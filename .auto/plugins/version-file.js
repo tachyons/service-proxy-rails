@@ -17,7 +17,8 @@ module.exports = class VersionFilePlugin {
         auto.hooks.beforeCommitChangelog.tap(
             'VersionFile',
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
-                let version
+                auto.logger.verbose.success("Triggered plugin");
+                let version;
                 if (lastRelease.match(/\d+\.\d+\.\d+/)) {
                     version = await auto.release.calcNextVersion(lastRelease);
                 } else {
@@ -26,9 +27,9 @@ module.exports = class VersionFilePlugin {
                     version = inc(currentVersion, bump);
                 }
 
-                auto.logger.verbose.error(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
-                const versionWithoutPrefix = version.replace(/^v/, '')
-                auto.logger.verbose.error("Updating VERSION file to: ", versionWithoutPrefix);
+                auto.logger.verbose.success(`!!! in beforeCommitChangelog, currentVersion: ${currentVersion}, commits: ${commits}, notes: ${releaseNotes}, lastRelease: ${lastRelease}, version: ${version}`)
+                const versionWithoutPrefix = version.replace(/^v/, '');
+                auto.logger.verbose.success("Updating VERSION file to: ", versionWithoutPrefix);
                 fs.writeFileSync('./VERSION', versionWithoutPrefix);
                 await execPromise("git", ["add", "VERSION"]);
             }
