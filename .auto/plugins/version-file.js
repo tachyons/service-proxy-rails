@@ -17,6 +17,11 @@ module.exports = class VersionFilePlugin {
         auto.hooks.beforeCommitChangelog.tap(
             'VersionFile',
             async ({ currentVersion, commits, releaseNotes, lastRelease }) => {
+                console.error('TRIGGERED PLUGIN');
+                console.error(currentVersion);
+                console.error(JSON.stringify(commits));
+                console.error(JSON.stringify(releaseNotes));
+                console.error(lastRelease);
                 let version;
                 if (lastRelease.match(/\d+\.\d+\.\d+/)) {
                     version = await auto.release.calcNextVersion(lastRelease);
