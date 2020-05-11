@@ -24,14 +24,6 @@ $ bundle
 
 ## Usage
 
-Create a file named ``config/service_proxy.yml`` in your rails application directory.
-
-## Usage
-
-Create a file named ``config/service_proxy.yml`` in your rails application directory. It should look something like this -
-
-## Usage
-
 Create a file named ``config/service_proxy.yml`` in your rails application directory. It should look something like this -
 
 ```yml
