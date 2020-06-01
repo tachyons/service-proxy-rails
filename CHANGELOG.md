@@ -1,3 +1,17 @@
+# v0.2.12 (Mon Jun 01 2020)
+
+#### 🐛 Bug Fix
+
+- Adding usage documentation [#4](https://github.com/sephora-asia/service-proxy-rails/pull/4) ([@arijitchakraborty](https://github.com/arijitchakraborty))
+- build(deps): bump activestorage from 6.0.2.2 to 6.0.3.1 [#6](https://github.com/sephora-asia/service-proxy-rails/pull/6) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Arijit Chakraborty ([@arijitchakraborty](https://github.com/arijitchakraborty))
+
+---
+
 # v0.2.4 (Sun May 10 2020)
 
 #### 🐛 Bug Fix
