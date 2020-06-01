@@ -62,8 +62,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'master'
-      - name: Build and publish gem
+      - name: Build and publish gem to github package registry
         uses: jstastny/publish-gem-to-github@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: sephora-asia
+
+      - name: Build and publish gem to rubygems.org
+        uses: dawidd6/action-publish-gem@v1
+        with:
+          api_key: ${{secrets.RUBYGEMS_API_KEY}}
