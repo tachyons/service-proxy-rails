@@ -70,5 +70,6 @@ jobs:
           owner: sephora-asia
       - name: Build and publish gem to rubygems.org
         uses: dawidd6/action-publish-gem@v1
+        continue-on-error: true
         with:
           api_key: ${{secrets.RUBYGEMS_API_KEY}}
