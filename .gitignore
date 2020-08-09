@@ -1,5 +1,6 @@
 .bundle/
 .env
+.rakeTasks
 log/*.log
 pkg/
 spec/dummy/db/*.sqlite3
