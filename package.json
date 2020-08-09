@@ -6,13 +6,18 @@
     "@auto-it/jira": "^9.31.1",
     "@auto-it/released": "^9.31.1",
     "@auto-it/slack": "^9.31.1",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "all-contributors-cli": "^6.14.2",
     "auto": "^9.31.1",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
     "git-cz": "^4.3.1"
+  },
+  "resolutions": {
+    "dot-prop": "^5.2.0",
+    "lodash": "^4.17.19",
+    "yargs-parser": "^19.0.1"
   },
   "config": {
     "commitizen": {
